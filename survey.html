@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <title>Survey Questions</title>
+</head>
+
+<body>
+    <header>
+        <h1>Survey Questions</h1>
+    </header>
+    <hr>
+    <h2>About You</h2>
+    <form>
+        Name (Field Required)
+        <br>
+        <input id="name" type="text" name="">
+        <br> Link to Photo Image (Field Required)
+        <br>
+        <input id="image" type="file" name="">
+        <br>
+        <hr>
+        <h3>Martial art of choice?</h3>
+        <select id="q1">
+            <option value="one">Karate</option>
+            <option value="two">Jiu Jitsu</option>
+            <option value="three">Tae kwon Do</option>
+            <option value="four">MMA</option>
+            <option value="five">Kung fu</option>
+        </select>
+        <h3>Favorite Zelda Game</h3>
+        <select id="q2">
+            <option value="one">A link to the Past</option>
+            <option value="two">Majora's Mask</option>
+            <option value="three">Ocarina of time</option>
+            <option value="four">Windwaker</option>
+            <option value="five">Spirit Tracks</option>
+        </select>
+        <h3>Favorite Meme?</h3>
+        <select id="q3">
+            <option value="one">Pepe</option>
+            <option value="two">Philosoraptor</option>
+            <option value="three">Dolan</option>
+            <option value="four">Naval Stupidity memes</option>
+            <option value="five">Grumpy Cat</option>
+        </select>
+        <h3>Weapon of Choice</h3>
+        <select id="q4">
+            <option value="one">Bare Hands</option>
+            <option value="two">Knun Chucks</option>
+            <option value="three">Chainsaw</option>
+            <option value="four">Brass Knucles</option>
+            <option value="five">Katana</option>
+        </select>
+        <h3>Favorite Type of Food</h3>
+        <select id="q5">
+            <option value="one">Chinese Food</option>
+            <option value="two">Tex-Mex</option>
+            <option value="three">Itaian</option>
+            <option value="four">PERUVIAN!!!!(Right Answer)</option>
+            <option value="five">Sushi</option>
+        </select>
+        <h3>I'm in love with...</h3>
+        <select id="q6">
+            <option value="one">The coco</option>
+            <option value="two">A Stripper</option>
+            <option value="three">Myself</option>
+            <option value="four">Your sister</option>
+            <option value="five">Everything Cars</option>
+        </select>
+        <h3>Character Select</h3>
+        <select id="q7">
+            <option value="one">Shang Tsung</option>
+            <option value="two">Reptile</option>
+            <option value="three">Johnny Cage</option>
+            <option value="four">Liu Kang</option>
+            <option value="five">Goro</option>
+        </select>
+        
+        <h3>Favortie Show</h3>
+        <select id="q9">
+            <option value="one">Family Guy</option>
+            <option value="two">Walking Dead</option>
+            <option value="three">Futurama</option>
+            <option value="four">ATHF</option>
+            <option value="five">American Dad</option>
+        </select>
+        
+        <br>
+        <input type="submit" id="hidden" value="Submit">
+    </form>
+    <hr>
+   
+    </body>
+
+</html>
+<script type="text/javascript">
+$("#hidden").click(function(event) {
+    event.preventDefault();
+    var newFriend = {
+        name: $("#name").val().trim();
+        img: $("#image").val().trim();
+        scores: : [$("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), $("#q5").val(), $("#q6").val(), $("#q7").val(), $("#q8").val(), $("#q9").val(), $("#q10").val(), ]
+    }
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+}
+	console.log(newFriend);
+});
+$.post("api/friends", newFriend, function(data) {
+		$("#matchName").text(data.name);
+	    		$('#userImg').attr("src", data.photo);
+		    	// Show the modal with the best match 
+		    	$("#resultsModal").modal('toggle');
+	    	});
+	
+ // replace these id with your best mathcing firned
+</script>
